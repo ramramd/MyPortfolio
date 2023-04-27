@@ -10,5 +10,5 @@ import Foundation
 struct StockModel {
     var ticker, name: String?
     var currentPrice: String?
-    var quantity: Int?
+    var quantity: String?
 }

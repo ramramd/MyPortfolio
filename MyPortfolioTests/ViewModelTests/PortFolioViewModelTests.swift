@@ -77,5 +77,17 @@ class PortFolioViewModelTests: XCTestCase {
         XCTAssertNotNil(processedData[0].currentPrice)
         XCTAssertNotNil(processedData[0].quantity)
     }
+    
+    func testCallingFormatStockQuantityReturnsZeroShareswhenQuantityIsNil() {
+        XCTAssertTrue(subject.formatStockQuantity(quantity: nil) == "0 shares")
+    }
+    
+    func testCallingFormatStockQuantityReturnsFormattedStockQuantityWhenQuantityIsONE() {
+        XCTAssertTrue(subject.formatStockQuantity(quantity: 1) == "1 share")
+    }
+    
+    func testCallingFormatStockQuantityReturnsFormattedStockQuantityWhenQuantityIsMoreThanONE() {
+        XCTAssertTrue(subject.formatStockQuantity(quantity: 2) == "2 shares")
+    }
 
 }

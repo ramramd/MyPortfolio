@@ -51,10 +51,17 @@ class PortFolioViewModel:BaseViewModel {
             var stockData = StockModel()
             stockData.name = item.name
             stockData.currentPrice = appendCurrencyUnit(currency: item.currency, price: item.currentPriceCents)
-            stockData.quantity = item.quantity
+            stockData.quantity = formatStockQuantity(quantity: item.quantity)
             processStockData.append(stockData)
         }
         return processStockData
+    }
+    
+    func formatStockQuantity(quantity: Int?) -> String {
+        guard let quantity = quantity else {
+            return "0 shares"
+        }
+        return (quantity == 1 ? "\(quantity) share" : "\(quantity) shares")
     }
     
     func appendCurrencyUnit(currency: Currency, price: Int) -> String {

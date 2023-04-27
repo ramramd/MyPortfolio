@@ -51,12 +51,10 @@ class ViewController: BaseViewController {
                 (index, stock: StockModel, cell: StockTableViewCell) in
                 cell.tickerLabel.text = stock.name
                 cell.priceLabel.text = stock.currentPrice
-                cell.unitsLabel.text = "\(stock.quantity ?? 0) shares"
+                cell.unitsLabel.text = stock.quantity
             }
             .disposed(by: disposeBag)
     }
-
-
 
 }
 
