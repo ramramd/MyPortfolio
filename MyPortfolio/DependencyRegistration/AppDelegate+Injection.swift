@@ -23,8 +23,8 @@ extension Resolver: ResolverRegistering {
 
     //Register all Api Requests here
     public static func registerApiRequests() {
-        register(name: .getStocksApiRequest) { (_, _) -> ApiRequestProtocol in
-            return GetStocksApiRequest()
+        register(name: .getPortfolioApiRequest) { (_, _) -> ApiRequestProtocol in
+            return GetPortfolioApiRequest()
         }
     }
 }

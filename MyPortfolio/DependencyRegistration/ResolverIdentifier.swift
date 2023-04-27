@@ -9,5 +9,5 @@ import Resolver
 
 //Identifier for Api Requests
 extension Resolver.Name {
-    static let getStocksApiRequest = Self("GetStocksApiRequest")
+    static let getPortfolioApiRequest = Self("GetPortfolioApiRequest")
 }

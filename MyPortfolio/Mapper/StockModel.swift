@@ -9,7 +9,6 @@ import Foundation
 
 struct StockModel {
     var ticker, name: String?
-    var currency: Currency?
     var currentPrice: String?
     var quantity: Int?
 }

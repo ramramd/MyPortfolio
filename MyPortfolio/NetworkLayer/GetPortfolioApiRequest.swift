@@ -8,7 +8,7 @@
 import Foundation
 
 //Api Requests completely define the request like which end point to hit and what is the http type
-class GetStocksApiRequest: ApiRequestProtocol {
+class GetPortfolioApiRequest: ApiRequestProtocol {
     
     //Change this endpointPath to "/getMalFormedPortfolioData" for malformed response
     //Change this endpointPath to "/getEmptyPortfolio" for empty response

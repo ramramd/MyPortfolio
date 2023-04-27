@@ -15,7 +15,7 @@ class PortFolioViewModel:BaseViewModel {
     var stocksList = BehaviorRelay<[StockModel]>(value: [])
     
     //Inject dependecies with Resolver dependency injection framework
-    @Injected(name: .getStocksApiRequest) var getStocksApiRequest: ApiRequestProtocol
+    @Injected(name: .getPortfolioApiRequest) var getPortfolioApiRequest: ApiRequestProtocol
     
     func getStocks()  {
         getStockList { [ weak self] response in
@@ -40,7 +40,7 @@ class PortFolioViewModel:BaseViewModel {
     
     func getStockList(completionBlock: @escaping (StockList?) -> Void) {
         isDataLoading.accept(true)
-        getStocksApiRequest.executeRequest { (response) in
+        getPortfolioApiRequest.executeRequest { (response) in
           completionBlock(response)
         }
     }

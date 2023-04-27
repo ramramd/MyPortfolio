@@ -1,0 +1,28 @@
+{
+  "stocks": [
+    {
+      "ticker": "^GSPC",
+      "name": "S&P 500",
+      "currency": "USD",
+      "current_price_cents": 318157,
+      "quantity": 20,
+      "current_price_timestamp": 1681845832
+    },
+    {
+      "ticker": "RUNINC",
+      "name": "Runners Inc.",
+      "currency": "USD",
+      "current_price_cents": 3614,
+      "quantity": 5,
+      "current_price_timestamp": 1681845832
+    },
+    {
+      "ticker": "EXPE",
+      "name": "Expedia Group, Inc.",
+      "currency": "USD",
+      "current_price_cents": 8165,
+      "quantity": 60,
+      "current_price_timestamp": 1681845832
+    }
+  ]
+}
