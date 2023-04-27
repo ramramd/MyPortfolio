@@ -48,11 +48,9 @@ class ViewController: BaseViewController {
         //Binding to populate tableview when the list of stocks is fetched from server
         viewModel.stocksList
             .bind(to: tableView.rx.items(cellIdentifier: cellReuseIdentifier, cellType: StockTableViewCell.self)) {
-                (index, stock: Stock, cell: StockTableViewCell) in
+                (index, stock: StockModel, cell: StockTableViewCell) in
                 cell.tickerLabel.text = stock.name
-                cell.priceLabel.text = String(stock.currentPriceCents)
-                cell.priceLabel.text = self.viewModel.appendCurrencyUnit(currency: stock.currency, price: stock.currentPriceCents)
-                cell.unitsLabel.text = String(stock.quantity ?? 0)
+                cell.priceLabel.text = stock.currentPrice
                 cell.unitsLabel.text = "\(stock.quantity ?? 0) shares"
             }
             .disposed(by: disposeBag)

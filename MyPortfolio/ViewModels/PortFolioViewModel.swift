@@ -12,7 +12,7 @@ import RxCocoa
 
 class PortFolioViewModel:BaseViewModel {
     //View model properties
-    var stocksList = BehaviorRelay<[Stock]>(value: [])
+    var stocksList = BehaviorRelay<[StockModel]>(value: [])
     
     //Inject dependecies with Resolver dependency injection framework
     @Injected(name: .getStocksApiRequest) var getStocksApiRequest: ApiRequestProtocol
@@ -30,8 +30,9 @@ class PortFolioViewModel:BaseViewModel {
                 self?.isDataLoading.accept(false)
                 return
             }
-            let processedStockData = self?.processStockData(rawStockData: response)
-            self?.stocksList.accept(response.stocks)
+            if let processedStockData = self?.processStockData(rawStockData: response) {
+                self?.stocksList.accept(processedStockData)
+            }
             self?.noData.accept(false)
             self?.isDataLoading.accept(false)
         }
@@ -45,12 +46,13 @@ class PortFolioViewModel:BaseViewModel {
     }
     
     func processStockData(rawStockData: StockList) -> [StockModel] {
-        let processStockData = [StockModel]()
+        var processStockData = [StockModel]()
         for item in rawStockData.stocks {
             var stockData = StockModel()
             stockData.name = item.name
             stockData.currentPrice = appendCurrencyUnit(currency: item.currency, price: item.currentPriceCents)
             stockData.quantity = item.quantity
+            processStockData.append(stockData)
         }
         return processStockData
     }
