@@ -35,9 +35,10 @@ class PortFolioViewModelTests: XCTestCase {
         XCTAssertTrue(subject.isDataLoading.value)
     }
     
-    func testCallingAppendCurrencyUnitAppendsCurrency() {
+    func testCallingAppendCurrencyUnitFormatsAndAppendsCurrency() {
         let value = subject.appendCurrencyUnit(currency: .usd, price: 45236)
         XCTAssertTrue(value.hasPrefix("$"))
+        XCTAssertTrue(value == "$452.36")
     }
     
     func testCallingGetStocksUpdatesViewModelProperties() {
