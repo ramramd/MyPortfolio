@@ -10,7 +10,6 @@
 		3A87052A521F6A30B8A2EB24 /* Pods_MyPortfolio_MyPortfolioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B7671E86981A3073904398B /* Pods_MyPortfolio_MyPortfolioUITests.framework */; };
 		4F510A5129FA4C4B00E21CDB /* GetPortfolioApiRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F510A5029FA4C4B00E21CDB /* GetPortfolioApiRequestMock.swift */; };
 		4F510A5429FA4D2100E21CDB /* PortFolioViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F510A5329FA4D2100E21CDB /* PortFolioViewModelTests.swift */; };
-		4F510A5729FA4DA500E21CDB /* MockRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F510A5629FA4DA500E21CDB /* MockRegistration.swift */; };
 		4F510A5E29FACB2700E21CDB /* TestDataUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F510A5D29FACB2700E21CDB /* TestDataUtilities.swift */; };
 		4F510A5F29FAF9A200E21CDB /* stockdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F510A5B29FACA2C00E21CDB /* stockdata.json */; };
 		4F510A6129FB192000E21CDB /* nostockdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F510A6029FB192000E21CDB /* nostockdata.json */; };
@@ -62,7 +61,6 @@
 		3BD5DEF2358913B382A6367B /* Pods-MyPortfolioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPortfolioTests.release.xcconfig"; path = "Target Support Files/Pods-MyPortfolioTests/Pods-MyPortfolioTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F510A5029FA4C4B00E21CDB /* GetPortfolioApiRequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPortfolioApiRequestMock.swift; sourceTree = "<group>"; };
 		4F510A5329FA4D2100E21CDB /* PortFolioViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortFolioViewModelTests.swift; sourceTree = "<group>"; };
-		4F510A5629FA4DA500E21CDB /* MockRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegistration.swift; sourceTree = "<group>"; };
 		4F510A5B29FACA2C00E21CDB /* stockdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stockdata.json; sourceTree = "<group>"; };
 		4F510A5D29FACB2700E21CDB /* TestDataUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataUtilities.swift; sourceTree = "<group>"; };
 		4F510A6029FB192000E21CDB /* nostockdata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nostockdata.json; sourceTree = "<group>"; };
@@ -141,14 +139,6 @@
 			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
-		4F510A5529FA4D9000E21CDB /* TestRegistration */ = {
-			isa = PBXGroup;
-			children = (
-				4F510A5629FA4DA500E21CDB /* MockRegistration.swift */,
-			);
-			path = TestRegistration;
-			sourceTree = "<group>";
-		};
 		4F510A5829FAC5EF00E21CDB /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +204,6 @@
 			children = (
 				4F510A5C29FACAFD00E21CDB /* SupportingFiles */,
 				4F510A5829FAC5EF00E21CDB /* TestData */,
-				4F510A5529FA4D9000E21CDB /* TestRegistration */,
 				4F510A5229FA4CFF00E21CDB /* ViewModelTests */,
 				4F510A4F29FA4C2400E21CDB /* MockImplementations */,
 			);
@@ -571,7 +560,6 @@
 			files = (
 				4F510A5129FA4C4B00E21CDB /* GetPortfolioApiRequestMock.swift in Sources */,
 				4F510A5E29FACB2700E21CDB /* TestDataUtilities.swift in Sources */,
-				4F510A5729FA4DA500E21CDB /* MockRegistration.swift in Sources */,
 				4F510A5429FA4D2100E21CDB /* PortFolioViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

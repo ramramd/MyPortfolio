@@ -13,7 +13,7 @@ class GetPortfolioApiRequest: ApiRequestProtocol {
     //Change this endpointPath to "/getMalFormedPortfolioData" for malformed response
     //Change this endpointPath to "/getEmptyPortfolio" for empty response
     //Change this endpointPath to "/getStocks" for full stocks data
-    var endpointPath = "/getStocks"
+    var endpointPath = "/getMyPortfolio"
     //We usually get this base end point via a start up call. In this project, I am just hardcoding it.
     var endpointBase = "https://demo7701654.mockable.io"
 

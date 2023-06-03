@@ -14,14 +14,11 @@ import XCTest
 class PortFolioViewModelTests: XCTestCase {
     
     var subject: PortFolioViewModel!
-    var getPortfolioApiRequestMock: GetPortfolioApiRequestMock!
     
     override func setUp() {
         super.setUp()
-        Resolver.registerMocks()
         subject = PortFolioViewModel()
-        getPortfolioApiRequestMock =  GetPortfolioApiRequestMock()
-        subject.getPortfolioApiRequest = getPortfolioApiRequestMock
+        subject.getPortfolioApiRequest = GetPortfolioApiRequestMock()
     }
     
     override func tearDown() {
@@ -45,7 +42,7 @@ class PortFolioViewModelTests: XCTestCase {
         XCTAssertTrue(subject.stocksList.value.count == 0)
         subject.noData.accept(true)
         subject.isDataLoading.accept(true)
-        getPortfolioApiRequestMock.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.stockDataFile)
+        (subject.getPortfolioApiRequest as? GetPortfolioApiRequestMock)?.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.stockDataFile)
         subject.getStocks()
         XCTAssertTrue(subject.stocksList.value.count == 3)
         XCTAssertFalse(subject.noData.value)
@@ -55,7 +52,7 @@ class PortFolioViewModelTests: XCTestCase {
     func testCallingGetStocksSetsServerErrorWhenResponseIsNil() {
         subject.isServerError.accept(false)
         subject.isDataLoading.accept(true)
-        getPortfolioApiRequestMock.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.stockBadDataFile)
+        (subject.getPortfolioApiRequest as? GetPortfolioApiRequestMock)?.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.stockBadDataFile)
         subject.getStocks()
         XCTAssertTrue(subject.isServerError.value)
         XCTAssertFalse(subject.isDataLoading.value)
@@ -64,7 +61,7 @@ class PortFolioViewModelTests: XCTestCase {
     func testCallingGetStocksSetsNoDataWhenPortfolioIsEmpty() {
         subject.noData.accept(false)
         subject.isDataLoading.accept(true)
-        getPortfolioApiRequestMock.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.noStockDataFile)
+        (subject.getPortfolioApiRequest as? GetPortfolioApiRequestMock)?.response = TestDataUtilities.readJSONFromFile(fileName: TestDataUtilities.noStockDataFile)
         subject.getStocks()
         XCTAssertTrue(subject.noData.value)
         XCTAssertFalse(subject.isDataLoading.value)
